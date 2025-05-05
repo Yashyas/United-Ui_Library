@@ -1,4 +1,3 @@
-// 3D Pop Button
 import React from 'react';
 
 const Button3DPop = ({ label = "3D Pop", onClick }) => {
@@ -6,12 +5,12 @@ const Button3DPop = ({ label = "3D Pop", onClick }) => {
     <button
       onClick={onClick}
       className="
-        bg-[#36454F] text-white font-bold
-        px-6 py-3
-        shadow-[4px_4px_0px_#000000]
-        hover:shadow-[0px_0px_0px_#000000]
-        active:translate-y-[4px] active:translate-x-[4px]
-        transition-all duration-150 ease-in-out
+        px-6 py-3 bg-indigo-500 text-white font-bold rounded-lg 
+        shadow-[0_5px_0_#4C51BF] 
+        hover:shadow-[0_2px_0_#4C51BF] 
+        active:shadow-none 
+        hover:translate-y-1 active:translate-y-2 
+        transition-all duration-150
       "
     >
       {label}
