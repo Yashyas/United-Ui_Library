@@ -1,7 +1,0 @@
-// src/components/Button.jsx
-const Button2 = () => {
-    return <button className="px-4 py-2 bg-black text-white rounded">Click me</button>;
-  };
-  
-  export default Button2;
-  
