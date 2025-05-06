@@ -1,21 +1,53 @@
-const BasicModal = ({ isOpen, onClose, title, content }) => {
-    if (!isOpen) return null;
-  
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div className="bg-white p-6 rounded-xl shadow-lg w-96 max-w-full relative">
-          <button onClick={onClose} className="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-xl">
-            ×
-          </button>
-          <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-          <p className="mt-2 text-sm text-gray-600">{content}</p>
-          <div className="mt-4 flex justify-end">
-            <button onClick={onClose} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    );
+import React, { useEffect, useRef } from 'react';
+
+const BasicModal = ({
+  isOpen = true,
+  onClose = () => console.log('Modal closed'),
+  title = 'Default Modal Title',
+  children = 'This is the default modal content.',
+  fullscreen = false, // Toggle full-screen vs container-bound modal
+}) => {
+  const overlayRef = useRef(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (isOpen) document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
+  const handleOverlayClick = (e) => {
+    if (e.target === overlayRef.current) {
+      onClose();
+    }
   };
-  
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      ref={overlayRef}
+      onClick={handleOverlayClick}
+      className={`${
+        fullscreen
+          ? 'fixed inset-0 z-50'
+          : 'relative w-full h-auto border border-dashed border-gray-300 p-4'
+      } flex items-center justify-center bg-black/20 backdrop-blur-sm`}
+    >
+      <div className="bg-white rounded-2xl shadow-lg w-full max-w-md p-6 relative animate-fade-in">
+        <h2 className="text-xl font-semibold mb-4">{title}</h2>
+        <div className="text-gray-700">{children}</div>
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default BasicModal;

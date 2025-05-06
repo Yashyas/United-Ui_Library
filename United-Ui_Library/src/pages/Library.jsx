@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { groupedUIComponents, groupNames } from "../components/data/uiLibraryMeta";
 import ComponentPreview from "../components/ComponentPreview";
 import Sidebar from "../components/Sidebar";
 
 const Library = () => {
   const [selectedGroup, setSelectedGroup] = useState(groupNames[0] || null);
-  
-  
-  // Early return if no groups loaded
+
   if (!selectedGroup || !groupedUIComponents[selectedGroup]) {
     return (
       <div className="flex min-h-screen">
@@ -23,6 +21,8 @@ const Library = () => {
     );
   }
 
+  const isModalGroup = selectedGroup.toLowerCase().includes("modal");
+
   return (
     <div className="flex min-h-screen">
       <Sidebar
@@ -33,11 +33,23 @@ const Library = () => {
 
       <main className="flex-1 p-6 overflow-auto">
         <h1 className="text-2xl font-bold mb-4 capitalize">{selectedGroup}</h1>
+
         {groupedUIComponents[selectedGroup].map((item, idx) => (
           <ComponentPreview
             key={idx}
             title={item.title}
-            component={item.component}
+            component={() =>
+              isModalGroup ? (
+                <item.component
+                  isOpen={true}
+                  onClose={() => {}}
+                  title={item.title}
+                  content={`This is a preview of ${item.title}`}
+                />
+              ) : (
+                <item.component />
+              )
+            }
             code={item.code}
           />
         ))}
