@@ -23,5 +23,5 @@ export default Button3DPop;
 /*
 Explanation:
 - Creates a fake "3D pop" using offset shadow.
-- On active/click, the button shifts down/right and shadow disappears.
+- On active/click, the button shifts down and shadow disappears.
 */
