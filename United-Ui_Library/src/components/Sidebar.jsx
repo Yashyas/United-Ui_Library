@@ -13,7 +13,7 @@ export default function Sidebar({ groupNames, selectedGroup, onSelectGroup }) {
       `}
     >
       {/* Arrow Icon */}
-      <div className="flex justify-center items-center py-20 h-12">
+      <div className="flex justify-center items-center mt-16 h-12">
         <ChevronDown
           className={`text-gray-800 transition-transform duration-300 ease-in-out ${
             hovered ? "rotate-[-90deg]" : "rotate-0"
