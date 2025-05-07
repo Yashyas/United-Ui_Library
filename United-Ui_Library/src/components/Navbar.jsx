@@ -6,7 +6,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="sticky top-0 left-0 w-full z-50 bg-white/30 backdrop-blur-md border-b border-gray-200/20 shadow-sm">
+    <nav className="sticky top-0 left-0 w-full z-101 bg-white/30 backdrop-blur-md border-b border-gray-200/20 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <div
@@ -87,34 +87,21 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden px-4 pb-4 pt-2 space-y-2 bg-white/80 backdrop-blur-md border-t border-gray-200">
-          <a
-            href="#"
-            className="block text-gray-700 hover:text-indigo-600 transition"
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            className="block text-gray-700 hover:text-indigo-600 transition"
-          >
-            About
-          </a>
-          <a
-            href="#"
-            className="block text-gray-700 hover:text-indigo-600 transition"
-          >
-            Services
-          </a>
-          <a
-            href="#"
-            className="block text-gray-700 hover:text-indigo-600 transition"
-          >
-            Contact
-          </a>
-        </div>
-      )}
+      
+        {isOpen && (
+            <div
+              className={`absolute top-full left-0 w-full px-4 pt-2 space-y-2 bg-white/50 backdrop-blur-md border-t border-white/50 shadow-lg transition-all duration-500 ease-in-out ${
+                isOpen ? 'max-h-96 opacity-100 py-4' : 'max-h-0 opacity-0 py-0'
+              } overflow-hidden z-50`}
+            >
+              <a href="#" className="block text-gray-800 hover:text-indigo-600 transition">Home</a>
+              <a href="#" className="block text-gray-800 hover:text-indigo-600 transition">About</a>
+              <a href="#" className="block text-gray-800 hover:text-indigo-600 transition">Services</a>
+              <a href="#" className="block text-gray-800 hover:text-indigo-600 transition">Contact</a>
+            </div>
+          )}
+          
+
     </nav>
   );
 }
