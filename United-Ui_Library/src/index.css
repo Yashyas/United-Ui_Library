@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@font-face {
+    font-family: 'Qurova';
+    src: url('./assets/fonts/Qurova.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }

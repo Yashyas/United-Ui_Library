@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar"
 import Library from "./pages/Library"
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
 
   return (
     <>
+    <Navbar/>
       <Library/>
     </>
   )
