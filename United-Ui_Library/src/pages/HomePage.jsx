@@ -57,7 +57,7 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
         <div className="relative z-10 backdrop-blur-xl bg-white/10 rounded-3xl p-12 text-center max-w-4xl shadow-2xl border border-white/20">
           <h1 className="text-6xl font-extrabold text-white drop-shadow-lg">
-            Yash's Component UI Library
+            Component UI Library
           </h1>
           <p className="mt-6 text-lg text-gray-300">
             A plug-and-play React + Tailwind CSS kit crafted for elegance, speed, and beauty.
@@ -168,7 +168,7 @@ import { Button } from "./components/Button";
       <section className="py-24 text-center px-6">
         <h2 className="text-5xl font-extrabold text-white mb-4">Build Beautiful UIs Faster</h2>
         <p className="text-lg text-gray-300 mb-8">
-          Start using Yash's UI Library today and transform your workflow.
+          Start using this UI Library today and transform your workflow.
         </p>
         <Link
           to="/library"
