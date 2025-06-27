@@ -15,7 +15,7 @@ export default function Sidebar({ groupNames, selectedGroup, onSelectGroup }) {
       {/* Arrow Icon */}
       <div className="flex justify-center items-center mt-16 h-12">
         <ChevronDown
-          className={`text-gray-800 transition-transform duration-300 ease-in-out ${
+          className={`text-white transition-transform duration-300 ease-in-out ${
             hovered ? "rotate-[-90deg]" : "rotate-0"
           }`}
         />
@@ -26,9 +26,9 @@ export default function Sidebar({ groupNames, selectedGroup, onSelectGroup }) {
         {groupNames.map((group) => (
           <button
             key={group}
-            className={`flex items-center w-full px-3 py-2 rounded hover:bg-black/30 hover:text-white transition group ${
+            className={`flex items-center w-full px-3 py-2 rounded hover:bg-black/30 hover:text-white hover:font-semibold transition group ${
               hovered ? "justify-start" : "justify-center"
-            } ${selectedGroup === group && hovered ? "bg-black/50 font-semibold text-white" : "text-gray-800"}`}
+            } ${selectedGroup === group && hovered ? "bg-black/50 font-semibold text-white" : "text-white"}`}
             onClick={() => onSelectGroup(group)}
           >
             <span

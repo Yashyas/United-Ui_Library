@@ -13,7 +13,7 @@ const Library = () => {
     return (
       <div className="flex min-h-screen">
         {/* background gradient color  */}
-        <div className="fixed inset-0 bg-gradient-to-br to-white via-blue-300 from-purple-400 -z-10"></div>
+        <div className="fixed inset-0 bg-[radial-gradient(circle,white_0%,black_100%)] -z-10"></div>
         <Sidebar
           groupNames={groupNames}
           selectedGroup={selectedGroup}
@@ -33,7 +33,7 @@ const Library = () => {
   return (
     <div className="flex min-h-screen ">
       {/* background gradient color  */}
-      <div className="fixed inset-0 z-[-10] animate-gradient bg-rainbow-gradient"></div>
+      <div className="fixed inset-0 z-[-10] bg-gradient-to-br from-black via-gray-900 to-black"></div>
 
       <div className="w-12">
         <Sidebar
@@ -66,44 +66,6 @@ const Library = () => {
           />
         ))}
       </main>
-      <style jsx>{`
-        .bg-rainbow-gradient {
-          background: linear-gradient(
-            -45deg,
-            #ff9a9e,
-            #fad0c4,
-            #fbc2eb,
-            #a6c1ee,
-            #84fab0,
-            #8fd3f4,
-            #c3cfe2,
-            #fccb90,
-            #e0c3fc,
-            #f6d365,
-            #fd6585,
-            #a18cd1,
-            #fbc2eb,
-            #ff9a9e
-          );
-          background-size: 1600% 1600%;
-        }
-
-        @keyframes gradientShift {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-
-        .animate-gradient {
-          animation: gradientShift 30s ease infinite;
-        }
-      `}</style>
     </div>
   );
 };

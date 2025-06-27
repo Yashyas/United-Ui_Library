@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,43 +12,43 @@ export default function Navbar() {
         {/* Logo */}
         <div
           style={{ fontFamily: "'Qurova', sans-serif" }}
-          className="text-2xl font-extrabold tracking-wide text-gray-900 drop-shadow-sm uppercase"
+          className="text-2xl font-extrabold tracking-wide text-white drop-shadow-sm uppercase"
         >
           United <span className="text-purple-500">Ui</span>
         </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-6">
-          <a
-            href="#"
-            className="text-gray-700 hover:text-indigo-600 transition"
+          <Link
+            to="/"
+            className="text-white  px-3 py-2 rounded font-semibold hover:text-black hover:bg-white/50 transition"
           >
             Home
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-indigo-600 transition"
+          </Link>
+          <Link
+            to="/about"
+            className="text-white px-3 py-2 rounded font-semibold hover:text-black hover:bg-white/50 transition"
           >
             About
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-indigo-600 transition"
+          </Link>
+          <Link
+            to="/library"
+            className="text-white px-3 py-2 rounded font-semibold hover:text-black hover:bg-white/50 transition"
           >
-            Services
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-indigo-600 transition"
+            Library
+          </Link>
+          <Link
+            to="/contact"
+            className="text-white px-3 py-2 rounded font-semibold hover:text-black hover:bg-white/50 transition"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger Button (SVG icons) */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-white focus:outline-none"
           aria-label="Toggle Menu"
         >
           {isOpen ? (
@@ -94,10 +95,10 @@ export default function Navbar() {
                 isOpen ? 'max-h-96 opacity-100 py-4' : 'max-h-0 opacity-0 py-0'
               } overflow-hidden z-50`}
             >
-              <a href="#" className="block text-gray-800 hover:text-indigo-600 transition">Home</a>
-              <a href="#" className="block text-gray-800 hover:text-indigo-600 transition">About</a>
-              <a href="#" className="block text-gray-800 hover:text-indigo-600 transition">Services</a>
-              <a href="#" className="block text-gray-800 hover:text-indigo-600 transition">Contact</a>
+              <Link to="/" className="block text-white px-3 py-2 rounded font-semibold hover:text-black hover:bg-white/50 transition">Home</Link>
+              <Link to="/about" className="block text-white px-3 py-2 rounded font-semibold hover:text-black hover:bg-white/50 transition">About</Link>
+              <Link to="/library" className="block text-white px-3 py-2 rounded font-semibold hover:text-black hover:bg-white/50 transition">Library</Link>
+              <Link to="/contact" className="block text-white px-3 py-2 rounded font-semibold hover:text-black hover:bg-white/50 transition">Contact</Link>
             </div>
           )}
           
