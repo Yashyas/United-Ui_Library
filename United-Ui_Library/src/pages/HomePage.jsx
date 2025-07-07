@@ -96,37 +96,45 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Guide */}
-      <section id="guide" className="py-24 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div className="bg-white/10 p-8 rounded-2xl border border-white/20 backdrop-blur-xl">
-            <h2 className="text-3xl font-bold text-indigo-200 mb-4">Plug & Play Usage</h2>
-            <p className="text-gray-300 mb-4">
-              Just copy and paste the components. Works out of the box with full Tailwind support.
-            </p>
-            <div className="bg-black/30 rounded-lg p-6 font-mono text-sm text-white border border-white/20">
-              <pre>
+     {/* Guide */}
+<section id="guide" className="py-16 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    {/* Text Section */}
+    <div className="bg-white/10 p-6 sm:p-8 rounded-2xl border border-white/20 backdrop-blur-xl">
+      <h2 className="text-2xl sm:text-3xl font-bold text-indigo-200 mb-4">
+        Plug & Play Usage
+      </h2>
+      <p className="text-gray-300 mb-4">
+        Just copy and paste the components. Works out of the box with full Tailwind support.
+      </p>
+      <div className="bg-black/30 rounded-lg p-4 sm:p-6 font-mono text-sm text-white border border-white/20 overflow-x-auto">
+        <pre>
 {`// 1. Import
 import { Button } from "./components/Button";
 
 // 2. Use it
 <Button variant="primary">Click Me</Button>`}
-              </pre>
-            </div>
-          </div>
-          <img
-            src="https://img.icons8.com/3d-fluency/200/code.png"
-            alt="code"
-            className="w-full max-w-xs mx-auto drop-shadow-xl"
-          />
-        </div>
-      </section>
+        </pre>
+      </div>
+    </div>
+
+    {/* Image Section */}
+    <div className="flex justify-center">
+      <img
+        src="https://img.icons8.com/3d-fluency/200/code.png"
+        alt="code"
+        className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-xs drop-shadow-xl"
+      />
+    </div>
+  </div>
+</section>
+
 
       {/* Component Cards */}
       <section className="py-24 px-6 bg-gradient-to-t from-gray-950 to-black">
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-5xl font-bold text-indigo-200">Component Collection</h2>
-          <p className="text-gray-400 mt-4">Interactive, glassy, and crafted to scale your UI fast.</p>
+          <p className="text-gray-400 mt-4">Interactive, classy, and crafted to scale your UI fast.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-12">
           {components.map((comp) => (
